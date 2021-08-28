@@ -14,6 +14,7 @@ program
     '-b, --branches <branches...>',
     'branches that will be merged form left to right in a row'
   )
+  .option('-r, --return, return to first branch after merge flow')
   .action((options) => {
     require('../lib/mergeflow.js')(options)
   })
