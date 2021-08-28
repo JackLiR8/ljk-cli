@@ -19,5 +19,15 @@ program
     require('../lib/mergeflow.js')(options)
   })
 
+program
+  .command('gitConfig')
+  .description('config username and email for git')
+  .option('-n, --username <name>', 'user.name')
+  .option('-e, --email <email>', 'user.email')
+  .option('-g, --global', 'config git globally')
+  .action(options => {
+    require('../lib/gitConfig.js')(options)
+  })
+
 program.parse(process.argv)
 
